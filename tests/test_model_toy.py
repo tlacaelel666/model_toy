@@ -1,5 +1,5 @@
 import pytest
-from solitonic_qc.core.toy_model import (
+from toy_model import (
     get_complementary_state, identify_qubit, measure_system
 )
 
