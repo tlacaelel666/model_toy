@@ -5,6 +5,7 @@ concepto de un modelado cuantico de información de uso experimental
 
 ![Python Version](https://img.shields.io/badge/Python-3.9%2B-blue)
 ![License](https://img.shields.io/badge/Apache-2.0-green)
+![License](https://img.shields.io/badge/SmokApp-Software-black)
 ![GitHub last commit](https://img.shields.io/github/last-commit/YOUR_USERNAME/YOUR_REPOSITORY)
 ![GitHub stars](https://img.shields.io/github/stars/tlacaelel666/model_toy?style=social)
 
