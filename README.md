@@ -103,7 +103,7 @@ This demonstrates:
 ---
 
 **Status:** Research exploration
-**License:** MIT
+**License:** Apache 2.o
 ```
 
 **2. Crea `requirements.txt`:**
