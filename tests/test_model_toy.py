@@ -1,5 +1,5 @@
 import pytest
-from toy_model import (
+from model_toy import (
     get_complementary_state, identify_qubit, measure_system
 )
 
