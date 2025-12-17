@@ -95,10 +95,13 @@ def main():
     print("Sum of all states: 1+2+3+4+5+6 = 21")
     print("Operator Ô: cos(πn) * cos(πφn)\n")
 
+    measurement_count = 0
     while True:
         user_input = input("Press ENTER to measure (or 'q' to quit): ")
         if user_input.lower() == 'q':
             break
+
+        measurement_count += 1
         result = measure_system_with_operator()
         display_measurement(result)
 
@@ -122,15 +125,20 @@ def main():
             print(f"New state {measured_state} measured. ACCUMULATING phase.")
 
         # --- Display Accumulator ---
-        print(f"Golden Phase Accumulator: {GOLDEN_PHASE_ACCUMULATOR:.4f}")
+        print("-" * 50)
+        print(f"Collapse #{measurement_count} | Golden Phase Accumulator: {GOLDEN_PHASE_ACCUMULATOR:+.4f}")
 
-        # Simple progress bar visualization
-        # The accumulator can range from approx -1.4 to +1.4
-        progress = int((GOLDEN_PHASE_ACCUMULATOR + 1.5) / 3.0 * 50)
+        # Progress bar visualization with scale
+        # The accumulator's theoretical range is approx. [-1.9, +1.9]
+        # We use a safe, symmetric range of [-2.0, +2.0] for visualization.
+        progress = int((GOLDEN_PHASE_ACCUMULATOR + 2.0) / 4.0 * 50)
         progress = max(0, min(50, progress)) # Ensure it's within bounds
 
         bar = "[" + "=" * progress + " " * (50 - progress) + "]"
-        print(f"Accumulator Bar: {bar}\n")
+        scale = "[-2.0" + " " * 19 + "0" + " " * 20 + "+2.0]"
+
+        print(f"  {bar}")
+        print(f"  {scale}\n")
 
 if __name__ == "__main__":
     main()
