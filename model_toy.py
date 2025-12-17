@@ -2,9 +2,11 @@
 
 import random
 import numpy as np
-from operators import crear_operador_O, operador_O_aplicado, obtener_estado_medido
+from operators import PHI, crear_operador_O, operador_O_aplicado, obtener_estado_medido
 
 # Constants
+GOLDEN_PHASE_ACCUMULATOR = 0.0
+SEEN_STATES = set()
 QUBITS = {
     'qubit_1': {'q0': 1, 'q1': 6, 'name': 'a|y'},
     'qubit_2': {'q0': 2, 'q1': 5, 'name': 'b|e'},
@@ -99,6 +101,36 @@ def main():
             break
         result = measure_system_with_operator()
         display_measurement(result)
+
+        # --- Golden Phase Accumulator Logic ---
+        global GOLDEN_PHASE_ACCUMULATOR, SEEN_STATES
+
+        measured_state = result['measured']
+
+        # Calculate the golden phase for the measured state n
+        golden_phase = np.cos(np.pi * PHI * measured_state)
+
+        if measured_state in SEEN_STATES:
+            # If the state has been seen before, it's cancelled (subtracted)
+            GOLDEN_PHASE_ACCUMULATOR -= golden_phase
+            SEEN_STATES.remove(measured_state)
+            print(f"State {measured_state} seen before. CANCELLING phase.")
+        else:
+            # If it's a new state, it's accumulated (added)
+            GOLDEN_PHASE_ACCUMULATOR += golden_phase
+            SEEN_STATES.add(measured_state)
+            print(f"New state {measured_state} measured. ACCUMULATING phase.")
+
+        # --- Display Accumulator ---
+        print(f"Golden Phase Accumulator: {GOLDEN_PHASE_ACCUMULATOR:.4f}")
+
+        # Simple progress bar visualization
+        # The accumulator can range from approx -1.4 to +1.4
+        progress = int((GOLDEN_PHASE_ACCUMULATOR + 1.5) / 3.0 * 50)
+        progress = max(0, min(50, progress)) # Ensure it's within bounds
+
+        bar = "[" + "=" * progress + " " * (50 - progress) + "]"
+        print(f"Accumulator Bar: {bar}\n")
 
 if __name__ == "__main__":
     main()

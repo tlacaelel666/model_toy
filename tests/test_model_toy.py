@@ -1,6 +1,6 @@
 import pytest
 from model_toy import (
-    get_complementary_state, identify_qubit, measure_system
+    get_complementary_state, identify_qubit, measure_system_with_operator
 )
 
 def test_complementary_states_are_correct():
@@ -19,7 +19,7 @@ def test_identify_qubit_works():
     assert identify_qubit(4)[0] == 'qubit_3'
 
 def test_measure_returns_valid_structure():
-    result = measure_system()
+    result = measure_system_with_operator()
     assert 'measured' in result
     assert 'hidden' in result
     assert result['measured'] + result['hidden'] == 7
