@@ -1,113 +1,97 @@
 
-# <span style="font-family: 'Roboto', Gadget, sans-serif;">QUANTUM TOY MODEL</span>
+# <span style="font-family: 'Roboto', Gadget, sans-serif;">🌌QUANTUM TOY MODEL🌌</span>
 
-concepto de un modelado cuantico de información de uso experimental
+## RFSC Experimental Framework
 
-![Python Version](https://img.shields.io/badge/Python-3.9%2B-blue)
-![License](https://img.shields.io/badge/Apache-2.0-green)
-![License](https://img.shields.io/badge/SmokApp-Software-black)
-![GitHub last commit](https://img.shields.io/github/last-commit/YOUR_USERNAME/YOUR_REPOSITORY)
+![GitHub last commit](https://img.shields.io/github/last-commit/tlacaelel666/model_toy)
 ![GitHub stars](https://img.shields.io/github/stars/tlacaelel666/model_toy?style=social)
+![Python Version](https://img.shields.io/badge/Python-3.9%2B-blue?style=flat&logo=python)
+![License](https://img.shields.io/badge/License-Apache_2.0-green)
+![Theory](https://img.shields.io/badge/Theory-RFSC-purple)
+![Brand](https://img.shields.io/badge/SmokApp-Software-black)
 
+> **An interactive simulation of Systematic Causal Fragmented Reduction (RFSC) applied to a discrete topological system.**
 
-## Descripción
+## Overview
 
-Este proyecto es un modelo de juguete interactivo para simular mediciones cuánticas en un sistema simple de 3 qubits.
+**Quantum Toy Model** is not just a random number generator; it is a computational exploration of the **Dynamic Information Theory (DIT)**. It models a closed quantum system where information is conserved through a topological invariant ($H=7$) and collapsed via a Golden Ratio-based operator.
 
-El modelo simula la medición de un sistema cuántico en superposición, donde al aplicar un operador de medición (Ô), el sistema colapsa a un estado medido y revela un estado complementario oculto. La suma de los valores de los estados medido y oculto siempre es 7.
+This framework demonstrates how a measurement operator ($\hat{O}$) induces a deterministic bias in superposition collapse, revealing the thermodynamic cost of observation (Landauer's Principle).
 
-## Cómo ejecutar
+## 🗝 Core Concepts
 
-1.  Clona este repositorio:
-    cd model toy
-    git clone https://github.com/tlacaelel666/model_toy.git
+### 1. The Topological Invariant ($H=7$)
+The system consists of 3 Qubits coupled as complementary dipoles. Information is never destroyed, only hidden. The sum of the **Manifest State** (measured) and the **Hidden State** (grounding) is always constant:
 
-    python3 -m model_toy
+$$| \psi_{manifest} \rangle + | \psi_{hidden} \rangle = 7$$
 
-# Quantum Toy Model
+| Qubit | Spin Up (Manifest) | Spin Down (Hidden) | Sum ($H$) |
+| :---: | :---: | :---: | :---: |
+| **Q1** | $a (1)$ | $y (6)$ | **7** |
+| **Q2** | $b (2)$ | $e (5)$ | **7** |
+| **Q3** | $c (3)$ | $d (4)$ | **7** |
 
-A discrete quantum system with 3 qubits as complementary pairs, demonstrating measurement-induced collapse and operator-driven state selection.
+## 2. The Golden Operator ($\hat{O}$)
+Unlike standard random collapse, this model applies a custom angular projection operator based on the Golden Ratio ($\phi \approx 1.618$) and Parity ($n$):
 
-## Quick Start
-```bash
-git clone https://github.com/tlacaelel666/model_toy.git
-cd model_toy
-pip install -r requirements.txt
-python -m model_toy
-```
+$$\hat{O}_n = \cos(\pi n) \cdot \cos(\pi \phi n)$$
 
-## What is this?
-
-**3 Qubits as complementary pairs:**
-- Qubit 1: a(1) ↔ y(6) → sum = 7
-- Qubit 2: b(2) ↔ e(5) → sum = 7
-- Qubit 3: c(3) ↔ d(4) → sum = 7
-
-**Measurement:** Collapses one qubit to |0⟩ or |1⟩, hiding complementary state
-
-**Operator Ô:** Governs measurement: `Ô_n = cos(πn) × cos(πφn)`
-
-## How it works
-```
-Initial: All 3 qubits in superposition |ψ⟩
-         Sum of all states = 21
-
-Measure: Apply Ô operator → collapse one qubit
-         State_measured + State_hidden = 7
-         Other 2 qubits remain |ψ⟩
-
-Result:  H = measured + hidden = 7
-         h + H = 0 + 7 = 7 (energy conservation)
-```
-
-## Run Examples
-```bash
-# Interactive CLI
-python -m model_toy
-
-# Run tests (coming soon)
-pytest tests/
-```
-
-## Project Structure
-```
-model_toy/
-├── __init__.py
-├── model_toy.py          # Core logic
-├── operators.py          # Ô operator (to be extracted)
-├── requirements.txt
-├── tests/
-│   ├── __init__.py
-│   └── test_toy_model.py
-└── README.md
-```
-
-## Theory
-
-See `docs/THEORY.md` for mathematical formalism.
-
-## Limitations
-
-- Classical simulation (not actual quantum)
-- Single qubit measurement at a time
-- Simplified noise model
-- No experimental validation
-
-## For Recruiters
-
-This demonstrates:
-- Discrete quantum logic implementation
-- Python scientific computing
-- Clean code structure
-- Mathematical modeling
+This creates a "Laminar Flow" of probability, resulting in a distinct bias (approx **88% vs 12%**) rather than maximum entropy (50/50), simulating a noise-resistant quantum channel. 
 
 ---
 
-**Status:** Research exploration
-**License:** Apache 2.o
-```
+## 🚀 Quick Start
 
-**2. Crea `requirements.txt`:**
+### Prerequisites
+- Python 3.9+
+- NumPy
+
+### Installation
+
 ```
-numpy>=1.20.0
-pytest>=6.0.0
+```
+### Clone the repository
+git clone [https://github.com/tlacaelel666/model_toy.git](https://github.com/tlacaelel666/model_toy.git)
+
+### Navigate to the directory
+cd model_toy
+
+### Install dependencies (if applicable)
+pip install -r requirements.txt
+
+### Run toy model
+python3 -m model_toy
+
+### Output
+``` 
+==================================================
+  QUANTUM TOY MODEL - Interactive
+==================================================
+
+Initial state: 3 qubits in superposition |ψ⟩
+Sum of all states: 1+2+3+4+5+6 = 21
+Operator Ô: cos(πn) * cos(πφn)
+
+Press ENTER to measure (or 'q' to quit):(press enter)-> 
+
+==================================================
+  QUANTUM MEASUREMENT (Operator Ô)
+==================================================
+
+Operator Ô applied to superposition |ψ⟩
+  P(|0⟩) = 0.8839
+  P(|1⟩) = 0.1161
+  → Collapsed to: |1⟩
+
+Qubit measured: qubit_3
+State: d (value=1)
+Hidden state: c
+H = 4 + 3 = 7
+
+New state 4 measured. ACCUMULATING phase.
+Golden Phase Accumulator: 0.0874
+Accumulator Bar: [==========================                        ] # phase progretion
+
+Press ENTER to measure (or 'q' to quit): 
+
+```
