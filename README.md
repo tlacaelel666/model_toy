@@ -36,7 +36,7 @@ Unlike standard random collapse, this model applies a custom angular projection 
 
 $$\hat{O}_n = \cos(\pi n) \cdot \cos(\pi \phi n)$$
 
-This creates a "Laminar Flow" of probability, resulting in a distinct bias (approx **88% vs 12%**) rather than maximum entropy (50/50), simulating a noise-resistant quantum channel. 
+This creates a "Laminar Flow" of probability, resulting in a distinct bias (approx **88% vs 12%**) rather than maximum entropy (50/50), simulating a noise-resistant quantum channel. Manifest: 88.00%, Hidden: 12.00% (normalization in 1-6 subset) 
 
 ---
 
