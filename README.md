@@ -60,9 +60,9 @@ pip install -r requirements.txt
 
 ### Run toy model
 python3 -m model_toy
-
+```
 ### Output
-``` 
+```
 ==================================================
   QUANTUM TOY MODEL - Interactive
 ==================================================
@@ -80,17 +80,28 @@ Press ENTER to measure (or 'q' to quit):(press enter)->
 Operator Ô applied to superposition |ψ⟩
   P(|0⟩) = 0.8839
   P(|1⟩) = 0.1161
-  → Collapsed to: |1⟩
+  → Collapsed to: |0⟩
 
 Qubit measured: qubit_3
-State: d (value=1)
-Hidden state: c
-H = 4 + 3 = 7
+State: c (value=0)
+Hidden state: d
+H = 3 + 4 = 7
 
-New state 4 measured. ACCUMULATING phase.
-Golden Phase Accumulator: 0.0874
-Accumulator Bar: [==========================                        ] # phase progretion
+New state 3 measured. ACCUMULATING phase.
+--------------------------------------------------
+Collapse #19 | Golden Phase Accumulator: -0.5759
+  [=================                                 ]
+  [-2.0                   0                    +2.0]
+
 
 Press ENTER to measure (or 'q' to quit): 
-
 ```
+
+<div align="center">
+   <p>
+     
+      made with jules, Gemini AI & Quoremind AI. by Jako
+     
+   </p>
+   
+</div>
