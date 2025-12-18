@@ -49,7 +49,6 @@ This creates a "Laminar Flow" of probability, resulting in a distinct bias (appr
 ### Installation
 
 ```
-```
 ### Clone the repository
 git clone [https://github.com/tlacaelel666/model_toy.git](https://github.com/tlacaelel666/model_toy.git)
 
