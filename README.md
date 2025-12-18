@@ -1,5 +1,5 @@
 
-# <span style="font-family: 'Roboto', Gadget, sans-serif;">🌌QUANTUM TOY MODEL🌌</span>
+# <span style="font-family: 'Roboto', Gadget, sans-serif;">🌌QUANTUM MODEL TOY🌌</span>
 
 ## RFSC Experimental Framework
 
